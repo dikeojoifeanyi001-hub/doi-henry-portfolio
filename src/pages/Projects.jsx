@@ -11,6 +11,20 @@ const projects = [
       "Built deterministic risk scoring algorithm (0–100)"
     ],
     tech: ["Node.js", "Express", "PostgreSQL", "JWT", "Railway"],
+    edgeCases: [
+      "Handled invalid or missing input data in API requests to prevent system crashes",
+      "Ensured authentication protection for all protected routes using JWT validation middleware",
+      "Designed fallback responses for failed database queries and API failures",
+      "Implemented safe defaults for risk scoring when route data is incomplete",
+      "Ensured system continues functioning even when external API requests fail"
+    ],
+    tradeoffs: [
+      "Chose JWT authentication instead of session-based auth for stateless scalability across services",
+      "Used Node.js + Express for fast API development instead of heavier frameworks",
+      "Selected a monolithic backend structure over microservices to reduce deployment complexity",
+      "Risk scoring logic is simplified (0–100 formula) to simulate real-world behavior",
+      "Used REST instead of GraphQL to keep system simple and predictable"
+    ],
     live: "https://dife-saas-api-production.up.railway.app",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-saas-api"
   },
@@ -26,6 +40,20 @@ const projects = [
       "Optimized API calls with axios interceptors"
     ],
     tech: ["React", "Vite", "Axios", "React Router", "Cloudflare Pages"],
+    edgeCases: [
+      "Handled API request failures with user-friendly error messages",
+      "Implemented loading states for all async operations",
+      "Displayed empty states when no drivers or routes exist",
+      "Managed token expiration with automatic logout redirect",
+      "Gracefully handled network disconnections during API calls"
+    ],
+    tradeoffs: [
+      "Chose React over Vue/Angular for ecosystem maturity and component reusability",
+      "Used Vite instead of Create React App for faster build times",
+      "Selected Axios over fetch for built-in interceptors",
+      "Used client-side routing instead of server-side for faster navigation",
+      "Simplified state management with React hooks instead of Redux"
+    ],
     live: "https://dife-dashboard.pages.dev",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-dashboard"
   },
@@ -41,6 +69,20 @@ const projects = [
       "Added structured logging for observability"
     ],
     tech: ["Cloudflare Workers", "Cron Jobs", "Fetch API", "GitHub Actions"],
+    edgeCases: [
+      "Handled API authentication failures with proper error logging",
+      "Implemented retry logic for transient network failures",
+      "Ensured cron jobs don't overlap or run concurrently",
+      "Added timeout handling for slow API responses",
+      "Designed graceful degradation when database is unavailable"
+    ],
+    tradeoffs: [
+      "Chose Cloudflare Workers over AWS Lambda for simpler deployment",
+      "Used cron triggers instead of real-time events to reduce complexity",
+      "Selected JSON logging over structured logging for simplicity",
+      "Implemented manual debug endpoint instead of full monitoring dashboard",
+      "Used polling (cron) instead of webhooks to avoid external infrastructure"
+    ],
     live: "https://dife-automation.dikeojo-ifeanyi001.workers.dev/run-jobs",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-automation"
   }
@@ -119,6 +161,24 @@ export default function Projects() {
     marginBottom: "24px"
   };
 
+  const edgeCasesStyle = {
+    backgroundColor: "#fff8e7",
+    padding: "20px",
+    borderRadius: "8px",
+    marginTop: "16px",
+    marginBottom: "24px",
+    borderLeft: "4px solid #ffc107"
+  };
+
+  const tradeoffsStyle = {
+    backgroundColor: "#e7f3ff",
+    padding: "20px",
+    borderRadius: "8px",
+    marginTop: "16px",
+    marginBottom: "24px",
+    borderLeft: "4px solid #0d6efd"
+  };
+
   const linkStyle = {
     color: "#0d6efd",
     textDecoration: "none",
@@ -151,6 +211,30 @@ export default function Projects() {
                 <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{decision}</li>
               ))}
             </ul>
+          </div>
+          
+          <div style={sectionLabelStyle}>Complexity & Edge Case Handling</div>
+          <div style={edgeCasesStyle}>
+            <ul style={{ margin: 0, paddingLeft: "20px" }}>
+              {project.edgeCases.map((edgeCase, i) => (
+                <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{edgeCase}</li>
+              ))}
+            </ul>
+            <p style={{ marginTop: "12px", marginBottom: 0, fontSize: "14px", color: "#666" }}>
+              The system is designed to remain stable under real-world failure conditions, not just ideal test scenarios.
+            </p>
+          </div>
+          
+          <div style={sectionLabelStyle}>Engineering Trade-offs</div>
+          <div style={tradeoffsStyle}>
+            <ul style={{ margin: 0, paddingLeft: "20px" }}>
+              {project.tradeoffs.map((tradeoff, i) => (
+                <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{tradeoff}</li>
+              ))}
+            </ul>
+            <p style={{ marginTop: "12px", marginBottom: 0, fontSize: "14px", color: "#666" }}>
+              These decisions were made to balance simplicity, scalability, and production readiness.
+            </p>
           </div>
           
           <div style={sectionLabelStyle}>Tech Stack</div>

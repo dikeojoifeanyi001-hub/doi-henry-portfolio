@@ -11,16 +11,48 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3 {
-  letter-spacing: -0.02em;
-}
-
 h1 {
-  letter-spacing: -0.02em;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
 }
 
 h2 {
-  letter-spacing: -0.01em;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+div {
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+li {
+  margin-bottom: 8px;
+  color: #444;
 }
 
 a {
@@ -33,11 +65,6 @@ a {
 a:hover {
   opacity: 0.7;
   text-decoration: underline;
-}
-
-/* Spacing utility */
-div {
-  margin-bottom: 0;
 }
 
 /* Container max-width for readability */

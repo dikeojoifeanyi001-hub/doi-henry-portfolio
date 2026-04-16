@@ -61,6 +61,14 @@ export default function Home() {
     borderLeft: "4px solid #0d6efd"
   };
 
+  const reliabilityBoxStyle = {
+    backgroundColor: "#fff8e7",
+    padding: "32px",
+    borderRadius: "12px",
+    marginBottom: "60px",
+    borderLeft: "4px solid #ffc107"
+  };
+
   const listStyle = {
     paddingLeft: "20px",
     lineHeight: "1.8",
@@ -78,7 +86,6 @@ export default function Home() {
 
   return (
     <div style={containerStyle}>
-      {/* ELITE HERO SECTION */}
       <div style={heroStyle}>
         <h1 style={nameStyle}>D.O.I Henry</h1>
         <h2 style={titleStyle}>Software Engineer — Backend Systems • SaaS Architecture • Automation Engineering</h2>
@@ -95,7 +102,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ARCHITECTURE LAYER SECTION - ELITE SIGNAL */}
       <h2 style={sectionTitleStyle}>System Architecture Thinking</h2>
       <div style={architectureBoxStyle}>
         <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px" }}>
@@ -111,7 +117,23 @@ export default function Home() {
         </p>
       </div>
 
-      {/* ENGINEERING SIGNAL FOOTER */}
+      <h2 style={sectionTitleStyle}>System Reliability Thinking</h2>
+      <div style={reliabilityBoxStyle}>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px" }}>
+          I design systems with failure in mind, not just success cases.
+        </p>
+        <ul style={listStyle}>
+          <li>API endpoints validate all incoming data before processing</li>
+          <li>System prevents unauthorized access using middleware-based authentication</li>
+          <li>External API failures do not crash the application</li>
+          <li>Database operations are structured to avoid inconsistent states</li>
+          <li>Frontend handles loading, error, and empty states gracefully</li>
+        </ul>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: 0 }}>
+          The system is designed to remain stable under real-world failure conditions.
+        </p>
+      </div>
+
       <div style={footerStyle}>
         <h3 style={{ fontSize: "22px", marginBottom: "16px" }}>Open to Software Engineering Roles</h3>
         <p style={{ marginBottom: "16px", color: "#555" }}>
