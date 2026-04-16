@@ -2,7 +2,7 @@ export default function Home() {
   const containerStyle = {
     maxWidth: "1000px",
     margin: "0 auto",
-    padding: "60px 40px"
+    padding: "70px 40px"
   };
 
   const heroStyle = {
@@ -10,15 +10,16 @@ export default function Home() {
   };
 
   const nameStyle = {
-    fontSize: "48px",
+    fontSize: "44px",
+    fontWeight: "700",
     marginBottom: "16px",
     color: "#1a1a2e"
   };
 
   const titleStyle = {
-    fontSize: "24px",
-    color: "#0d6efd",
-    marginBottom: "24px",
+    fontSize: "22px",
+    color: "#444",
+    marginBottom: "20px",
     fontWeight: "500"
   };
 
@@ -26,18 +27,22 @@ export default function Home() {
     fontSize: "18px",
     lineHeight: "1.6",
     color: "#444",
-    maxWidth: "600px",
+    maxWidth: "700px",
+    marginBottom: "24px"
+  };
+
+  const buildingStyle = {
+    fontSize: "16px",
+    fontWeight: "600",
+    color: "#0d6efd",
     marginBottom: "30px"
   };
 
-  const buttonStyle = {
-    display: "inline-block",
-    backgroundColor: "#0d6efd",
-    color: "white",
-    padding: "12px 24px",
-    borderRadius: "8px",
-    textDecoration: "none",
-    fontWeight: "500"
+  const linkButtonStyle = {
+    fontSize: "18px",
+    fontWeight: "500",
+    color: "#0d6efd",
+    textDecoration: "none"
   };
 
   const sectionTitleStyle = {
@@ -46,32 +51,26 @@ export default function Home() {
     color: "#1a1a2e"
   };
 
+  const systemBoxStyle = {
+    backgroundColor: "#f8f9fa",
+    padding: "32px",
+    borderRadius: "12px",
+    marginBottom: "48px",
+    borderLeft: "4px solid #0d6efd"
+  };
+
   const listStyle = {
     paddingLeft: "20px",
     lineHeight: "1.8",
-    marginBottom: "40px"
-  };
-
-  const proofBoxStyle = {
-    backgroundColor: "#f8f9fa",
-    padding: "24px",
-    borderRadius: "12px",
-    marginBottom: "40px",
-    borderLeft: "4px solid #0d6efd"
+    marginTop: "12px"
   };
 
   const ctaStyle = {
     backgroundColor: "#1a1a2e",
     color: "white",
-    padding: "40px",
+    padding: "48px",
     borderRadius: "12px",
-    textAlign: "center",
-    marginTop: "40px"
-  };
-
-  const linkStyle = {
-    color: "#0d6efd",
-    textDecoration: "none"
+    textAlign: "center"
   };
 
   return (
@@ -79,55 +78,49 @@ export default function Home() {
       {/* HERO SECTION */}
       <div style={heroStyle}>
         <h1 style={nameStyle}>D.O.I Henry</h1>
-        <h2 style={titleStyle}>Software Engineer (Backend • Systems • Full-Stack)</h2>
+        <h2 style={titleStyle}>Software Engineer — Backend • Systems • Full-Stack SaaS</h2>
         <p style={descriptionStyle}>
-          I build production-ready systems: scalable APIs, automation engines,
-          and dashboards that solve real logistics and business problems.
+          I design and build production-grade systems including scalable APIs,
+          automation engines, and full-stack dashboards that solve real business operations problems.
         </p>
-        <a href="/projects" style={buttonStyle}>View My Work →</a>
+        <div style={buildingStyle}>
+          Building: SaaS platforms • Automation systems • Logistics intelligence tools
+        </div>
+        <div>
+          <a href="/projects" style={linkButtonStyle}>View Engineering Work →</a>
+        </div>
       </div>
 
-      {/* WHAT I BUILD SECTION */}
-      <h3 style={sectionTitleStyle}>What I Build</h3>
-      <ul style={listStyle}>
-        <li>Multi-tenant SaaS backend systems with JWT authentication</li>
-        <li>Real-time dashboards with live API integration</li>
-        <li>Automation systems with background jobs and cron scheduling</li>
-        <li>End-to-end full-stack applications deployed to production</li>
-      </ul>
-
-      {/* ENGINEERING PROOF SECTION */}
-      <h3 style={sectionTitleStyle}>Engineering Focus</h3>
-      <div style={proofBoxStyle}>
-        <p style={{ fontSize: "16px", lineHeight: "1.6", margin: 0 }}>
-          I don't build demo apps. I build systems with real architecture:<br/>
-          <strong>API → Frontend → Automation → Data processing.</strong><br/>
-          All deployed, all working, all production-ready.
+      {/* SYSTEM THINKING SECTION */}
+      <h2 style={sectionTitleStyle}>System Architecture</h2>
+      <div style={systemBoxStyle}>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px" }}>
+          My projects are designed as a complete, production-ready SaaS ecosystem:
         </p>
-      </div>
-
-      {/* SYSTEM DESIGN SECTION */}
-      <h3 style={sectionTitleStyle}>System Design</h3>
-      <div style={proofBoxStyle}>
-        <p style={{ fontSize: "16px", lineHeight: "1.6", margin: 0 }}>
-          My projects work together as a complete logistics platform:
-        </p>
-        <ul style={{ marginTop: "12px", paddingLeft: "20px" }}>
-          <li><strong>SaaS API</strong> – Handles data, authentication, and business logic</li>
-          <li><strong>Dashboard</strong> – Visualizes and manages operations in real-time</li>
-          <li><strong>Automation System</strong> – Runs background intelligence (risk monitoring + billing)</li>
+        <ul style={listStyle}>
+          <li><strong>API Layer</strong> → Handles business logic, authentication, and data management</li>
+          <li><strong>Frontend Dashboard</strong> → Operational control system for real-time management</li>
+          <li><strong>Automation Engine</strong> → Background intelligence, risk monitoring, and billing simulation</li>
         </ul>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginTop: "16px", marginBottom: 0 }}>
+          This creates a full production-like SaaS ecosystem where each component works together seamlessly.
+        </p>
       </div>
 
-      {/* RECRUITER CTA */}
+      {/* RECRUITER CONVERSION SECTION */}
       <div style={ctaStyle}>
-        <h3 style={{ fontSize: "24px", marginBottom: "16px", color: "white" }}>Let's Work</h3>
-        <p style={{ marginBottom: "16px", color: "#ccc" }}>
-          I'm open to Backend, Full-Stack, and Systems Engineering roles.
+        <h2 style={{ fontSize: "28px", marginBottom: "16px", color: "white" }}>Let's Work Together</h2>
+        <p style={{ marginBottom: "16px", color: "#ccc", fontSize: "16px" }}>
+          I am open to Backend, Full-Stack, and Systems Engineering roles.
+        </p>
+        <p style={{ marginBottom: "8px" }}>
+          <a href="mailto:dikeojo.ifeanyi001@gmail.com" style={{ color: "#0d6efd", fontSize: "16px" }}>
+            dikeojo.ifeanyi001@gmail.com
+          </a>
         </p>
         <p>
-          <a href="mailto:dikeojo.ifeanyi001@gmail.com" style={{ color: "#0d6efd" }}>
-            dikeojo.ifeanyi001@gmail.com
+          <a href="https://github.com/dikeojoifeanyi001-hub" target="_blank" rel="noopener noreferrer" style={{ color: "#0d6efd", fontSize: "16px" }}>
+            github.com/dikeojoifeanyi001-hub
           </a>
         </p>
       </div>
