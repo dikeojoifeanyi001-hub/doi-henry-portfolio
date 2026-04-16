@@ -1,6 +1,7 @@
 const projects = [
   {
     title: "DIFE SaaS API",
+    impact: "Simulates a real SaaS logistics system with authentication, routing, and risk analysis.",
     problem: "Businesses needed a scalable multi-tenant logistics system with authentication, routing, and risk intelligence.",
     solution: "Built a production-ready REST API with JWT authentication, company isolation (multi-tenant architecture), and automated risk scoring engine.",
     systemArchitecture: "Node.js + Express API → PostgreSQL database → React dashboard → automation engine",
@@ -25,11 +26,24 @@ const projects = [
       "Risk scoring logic is simplified (0–100 formula) to simulate real-world behavior",
       "Used REST instead of GraphQL to keep system simple and predictable"
     ],
+    performance: [
+      "API responses are lightweight JSON payloads to reduce network overhead",
+      "Authentication middleware avoids unnecessary database calls for invalid tokens",
+      "Stateless backend design enables horizontal scaling",
+      "Database queries are structured to minimize joins and improve response time"
+    ],
+    scaleLimits: [
+      "No caching layer → repeated API calls hit database directly",
+      "No queue system → background jobs run synchronously under load",
+      "No rate limiting → API could be abused under high traffic",
+      "Single database instance → potential bottleneck under heavy read/write load"
+    ],
     live: "https://dife-saas-api-production.up.railway.app",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-saas-api"
   },
   {
     title: "DIFE React Dashboard",
+    impact: "Provides operations teams with real-time visibility into drivers, routes, and risk levels.",
     problem: "Operations teams needed a visual interface to manage logistics data and monitor route risk in real-time.",
     solution: "Built a responsive admin dashboard with secure authentication, real-time API integration, and risk visualization.",
     systemArchitecture: "React + Vite frontend → Axios API client → DIFE SaaS API → Cloudflare Pages deployment",
@@ -59,6 +73,7 @@ const projects = [
   },
   {
     title: "DIFE Automation System",
+    impact: "Automates risk monitoring and billing simulation using serverless cron jobs.",
     problem: "Manual monitoring of routes for high-risk conditions was inefficient. Companies needed automated alerting and billing.",
     solution: "Built a Cloudflare Worker with cron triggers that automatically checks routes every 2 minutes and calculates billing every 5 minutes.",
     systemArchitecture: "Cloudflare Workers → cron triggers → API integration → JSON logging",
@@ -115,9 +130,18 @@ export default function Projects() {
   const projectTitleStyle = {
     fontSize: "28px",
     fontWeight: "700",
-    marginBottom: "20px",
+    marginBottom: "12px",
     color: "#1a1a2e",
     letterSpacing: "-0.5px"
+  };
+
+  const impactStyle = {
+    fontSize: "16px",
+    fontWeight: "500",
+    color: "#0d6efd",
+    marginBottom: "20px",
+    paddingBottom: "12px",
+    borderBottom: "1px solid #eee"
   };
 
   const sectionLabelStyle = {
@@ -179,6 +203,16 @@ export default function Projects() {
     borderLeft: "4px solid #0d6efd"
   };
 
+  const performanceStyle = {
+    backgroundColor: "#e8f5e9",
+    padding: "20px",
+    borderRadius: "8px",
+    marginTop: "16px",
+    marginBottom: "24px",
+    borderLeft: "4px solid #28a745"
+  };
+
+  // BOLDER LINK STYLES - font-weight: 600
   const linkStyle = {
     color: "#0d6efd",
     textDecoration: "none",
@@ -194,6 +228,9 @@ export default function Projects() {
       {projects.map((project, index) => (
         <div key={index} style={cardStyle}>
           <h2 style={projectTitleStyle}>{project.title}</h2>
+          
+          {/* IMPACT SUMMARY - NEW */}
+          <p style={impactStyle}><strong>Impact:</strong> {project.impact}</p>
           
           <div style={sectionLabelStyle}>Problem</div>
           <p style={textStyle}>{project.problem}</p>
@@ -236,6 +273,38 @@ export default function Projects() {
               These decisions were made to balance simplicity, scalability, and production readiness.
             </p>
           </div>
+          
+          {project.performance && (
+            <>
+              <div style={sectionLabelStyle}>Performance & Optimization Considerations</div>
+              <div style={performanceStyle}>
+                <ul style={{ margin: 0, paddingLeft: "20px" }}>
+                  {project.performance.map((item, i) => (
+                    <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{item}</li>
+                  ))}
+                </ul>
+                <p style={{ marginTop: "12px", marginBottom: 0, fontSize: "14px", color: "#666" }}>
+                  Future improvements would include caching frequent requests using Redis and implementing pagination for large datasets.
+                </p>
+              </div>
+            </>
+          )}
+          
+          {project.scaleLimits && (
+            <>
+              <div style={sectionLabelStyle}>What Would Break at Scale</div>
+              <div style={edgeCasesStyle}>
+                <ul style={{ margin: 0, paddingLeft: "20px" }}>
+                  {project.scaleLimits.map((item, i) => (
+                    <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{item}</li>
+                  ))}
+                </ul>
+                <p style={{ marginTop: "12px", marginBottom: 0, fontSize: "14px", color: "#666" }}>
+                  These limitations are expected at early-stage architecture and would be resolved using Redis caching, job queues, and database scaling strategies.
+                </p>
+              </div>
+            </>
+          )}
           
           <div style={sectionLabelStyle}>Tech Stack</div>
           <div style={techStyle}>

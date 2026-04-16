@@ -8,9 +8,9 @@ export default function Contact() {
 
   const titleStyle = {
     fontSize: "36px",
+    fontWeight: "700",
     marginBottom: "40px",
-    color: "#1a1a2e",
-    letterSpacing: "-0.5px"
+    color: "#1a1a2e"
   };
 
   const cardStyle = {
@@ -43,18 +43,9 @@ export default function Contact() {
   };
 
   const linkStyle = {
-    color: "#0b57d0",
+    color: "#0d6efd",
     textDecoration: "none",
     fontWeight: "500"
-  };
-
-  const noteStyle = {
-    marginTop: "32px",
-    padding: "20px",
-    backgroundColor: "#e9ecef",
-    borderRadius: "8px",
-    fontSize: "14px",
-    color: "#555"
   };
 
   return (
@@ -85,11 +76,6 @@ export default function Contact() {
           <div style={valueStyle}>
             Backend Engineer • Software Engineer • Systems Engineer
           </div>
-        </div>
-
-        <div style={noteStyle}>
-          📍 Available for remote opportunities worldwide.<br />
-          I respond within 24 hours.
         </div>
       </div>
     </div>

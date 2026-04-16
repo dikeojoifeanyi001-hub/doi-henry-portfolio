@@ -1,37 +1,23 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
-  const navStyle = {
-    backgroundColor: "#1a1a2e",
-    padding: "16px 40px",
-    display: "flex",
-    gap: "20px",
-    marginBottom: "20px"
-  };
-
-  const linkStyle = {
-    color: "white",
-    textDecoration: "none",
-    fontSize: "16px"
-  };
-
   return (
     <BrowserRouter>
-      <div>
-        <nav style={navStyle}>
-          <Link to="/" style={linkStyle}>Home</Link>
-          <Link to="/projects" style={linkStyle}>Projects</Link>
-          <Link to="/contact" style={linkStyle}>Contact</Link>
-        </nav>
-        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        <Navbar />
+        <div style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );
