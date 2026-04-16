@@ -11,6 +11,12 @@ const projects = [
       "Risk scoring engine (0-100 based on route characteristics)",
       "Production deployment on Railway with PostgreSQL"
     ],
+    engineeringDecisions: [
+      "Designed modular API structure for scalability",
+      "Separated business logic from controllers for maintainability",
+      "Used stateless authentication (JWT) for distributed systems",
+      "Optimized data flow between frontend and backend systems"
+    ],
     live: "https://dife-saas-api-production.up.railway.app",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-saas-api"
   },
@@ -26,6 +32,12 @@ const projects = [
       "Risk monitoring with color-coded levels (Green/Yellow/Red)",
       "Responsive design for desktop and tablet devices"
     ],
+    engineeringDecisions: [
+      "Designed modular API structure for scalability",
+      "Separated business logic from controllers for maintainability",
+      "Used stateless authentication (JWT) for distributed systems",
+      "Optimized data flow between frontend and backend systems"
+    ],
     live: "https://dife-dashboard.pages.dev",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-dashboard"
   },
@@ -40,6 +52,12 @@ const projects = [
       "Debug endpoint (/run-jobs) returning complete JSON results",
       "Runs 24/7 with zero manual intervention",
       "Company-level billing breakdown and logging"
+    ],
+    engineeringDecisions: [
+      "Designed modular API structure for scalability",
+      "Separated business logic from controllers for maintainability",
+      "Used stateless authentication (JWT) for distributed systems",
+      "Optimized data flow between frontend and backend systems"
     ],
     live: "https://dife-automation.dikeojo-ifeanyi001.workers.dev/run-jobs",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-automation"
@@ -113,6 +131,14 @@ export default function Projects() {
     paddingLeft: "20px"
   };
 
+  const engineeringStyle = {
+    marginBottom: "24px",
+    paddingLeft: "20px",
+    backgroundColor: "#f8f9fa",
+    padding: "20px",
+    borderRadius: "8px"
+  };
+
   const linkStyle = {
     color: "#0d6efd",
     textDecoration: "none",
@@ -148,6 +174,16 @@ export default function Projects() {
               <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{feature}</li>
             ))}
           </ul>
+          
+          {/* ENGINEERING DECISIONS BLOCK - ADDED */}
+          <div style={sectionLabelStyle}>Engineering Decisions</div>
+          <div style={engineeringStyle}>
+            <ul style={{ margin: 0, paddingLeft: "20px" }}>
+              {project.engineeringDecisions.map((decision, i) => (
+                <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{decision}</li>
+              ))}
+            </ul>
+          </div>
           
           <div>
             <a href={project.live} style={linkStyle} target="_blank" rel="noopener noreferrer">

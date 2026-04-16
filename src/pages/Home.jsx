@@ -23,21 +23,6 @@ export default function Home() {
     fontWeight: "500"
   };
 
-  const descriptionStyle = {
-    fontSize: "18px",
-    lineHeight: "1.6",
-    color: "#444",
-    maxWidth: "700px",
-    marginBottom: "24px"
-  };
-
-  const buildingStyle = {
-    fontSize: "16px",
-    fontWeight: "600",
-    color: "#0d6efd",
-    marginBottom: "30px"
-  };
-
   const linkButtonStyle = {
     fontSize: "18px",
     fontWeight: "500",
@@ -51,6 +36,14 @@ export default function Home() {
     color: "#1a1a2e"
   };
 
+  const impactBoxStyle = {
+    backgroundColor: "#f8f9fa",
+    padding: "32px",
+    borderRadius: "12px",
+    marginBottom: "48px",
+    borderLeft: "4px solid #0d6efd"
+  };
+
   const systemBoxStyle = {
     backgroundColor: "#f8f9fa",
     padding: "32px",
@@ -62,7 +55,8 @@ export default function Home() {
   const listStyle = {
     paddingLeft: "20px",
     lineHeight: "1.8",
-    marginTop: "12px"
+    marginTop: "12px",
+    marginBottom: "16px"
   };
 
   const ctaStyle = {
@@ -75,19 +69,40 @@ export default function Home() {
 
   return (
     <div style={containerStyle}>
-      {/* HERO SECTION */}
+      {/* HERO SECTION - UPGRADED */}
       <div style={heroStyle}>
         <h1 style={nameStyle}>D.O.I Henry</h1>
         <h2 style={titleStyle}>Software Engineer — Backend • Systems • Full-Stack SaaS</h2>
-        <p style={descriptionStyle}>
-          I design and build production-grade systems including scalable APIs,
-          automation engines, and full-stack dashboards that solve real business operations problems.
+        
+        {/* UPGRADED HERO STATEMENT */}
+        <p style={{ fontSize: "18px", lineHeight: "1.6", color: "#444", maxWidth: "700px", marginBottom: "30px" }}>
+          I am a Software Engineer specializing in backend systems, scalable APIs,
+          and automation platforms. I design and build production-grade systems
+          that simulate real-world SaaS operations and business workflows.
         </p>
-        <div style={buildingStyle}>
-          Building: SaaS platforms • Automation systems • Logistics intelligence tools
-        </div>
+        
         <div>
           <a href="/projects" style={linkButtonStyle}>View Engineering Work →</a>
+        </div>
+      </div>
+
+      {/* ENGINEERING IMPACT SECTION - NEW */}
+      <div>
+        <h2 style={sectionTitleStyle}>Engineering Impact</h2>
+        <div style={impactBoxStyle}>
+          <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px" }}>
+            I focus on building systems that solve real operational problems,
+            not demo applications.
+          </p>
+          <ul style={listStyle}>
+            <li>Designed a multi-tenant SaaS backend architecture</li>
+            <li>Built automation system with background job execution</li>
+            <li>Developed dashboard connected to live production APIs</li>
+            <li>Implemented risk scoring logic for logistics operations</li>
+          </ul>
+          <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: 0 }}>
+            My goal is to think like a systems engineer: API → Data → Automation → Business logic.
+          </p>
         </div>
       </div>
 
@@ -107,21 +122,24 @@ export default function Home() {
         </p>
       </div>
 
-      {/* RECRUITER CONVERSION SECTION */}
+      {/* TRUST FOOTER / RECRUITER CONVERSION SECTION - UPGRADED */}
       <div style={ctaStyle}>
-        <h2 style={{ fontSize: "28px", marginBottom: "16px", color: "white" }}>Let's Work Together</h2>
+        <h3 style={{ fontSize: "24px", marginBottom: "16px", color: "white" }}>Open to Opportunities</h3>
         <p style={{ marginBottom: "16px", color: "#ccc", fontSize: "16px" }}>
-          I am open to Backend, Full-Stack, and Systems Engineering roles.
+          I am currently open to Backend, Full-Stack, and Systems Engineering roles.
         </p>
         <p style={{ marginBottom: "8px" }}>
-          <a href="mailto:dikeojo.ifeanyi001@gmail.com" style={{ color: "#0d6efd", fontSize: "16px" }}>
+          📧 <a href="mailto:dikeojo.ifeanyi001@gmail.com" style={{ color: "#0d6efd", fontSize: "16px" }}>
             dikeojo.ifeanyi001@gmail.com
           </a>
         </p>
-        <p>
-          <a href="https://github.com/dikeojoifeanyi001-hub" target="_blank" rel="noopener noreferrer" style={{ color: "#0d6efd", fontSize: "16px" }}>
+        <p style={{ marginBottom: "16px" }}>
+          🔗 <a href="https://github.com/dikeojoifeanyi001-hub" target="_blank" rel="noopener noreferrer" style={{ color: "#0d6efd", fontSize: "16px" }}>
             github.com/dikeojoifeanyi001-hub
           </a>
+        </p>
+        <p style={{ color: "#888", fontSize: "14px", marginTop: "24px" }}>
+          Built with React, Node.js, PostgreSQL, Cloudflare & Railway.
         </p>
       </div>
     </div>
