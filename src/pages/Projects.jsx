@@ -1,64 +1,46 @@
 const projects = [
   {
     title: "DIFE SaaS API",
-    problem: "Logistics companies needed a secure, multi-tenant backend system to manage drivers, routes, and risk assessment across multiple organizations.",
-    solution: "Built a production-grade REST API with JWT authentication, multi-tenant architecture, and an automated risk scoring engine.",
-    tech: ["Node.js", "Express", "PostgreSQL", "JWT", "Railway"],
-    features: [
-      "Multi-tenant company system (each company manages its own data)",
-      "JWT authentication with role-based access control",
-      "Driver and route management (full CRUD operations)",
-      "Risk scoring engine (0-100 based on route characteristics)",
-      "Production deployment on Railway with PostgreSQL"
-    ],
+    problem: "Businesses needed a scalable multi-tenant logistics system with authentication, routing, and risk intelligence.",
+    solution: "Built a production-ready REST API with JWT authentication, company isolation (multi-tenant architecture), and automated risk scoring engine.",
+    systemArchitecture: "Node.js + Express API → PostgreSQL database → React dashboard → automation engine",
     engineeringDecisions: [
-      "Designed modular API structure for scalability",
-      "Separated business logic from controllers for maintainability",
-      "Used stateless authentication (JWT) for distributed systems",
-      "Optimized data flow between frontend and backend systems"
+      "Separated services for scalability (controller/service pattern)",
+      "Implemented stateless authentication using JWT",
+      "Designed multi-tenant isolation per company",
+      "Built deterministic risk scoring algorithm (0–100)"
     ],
+    tech: ["Node.js", "Express", "PostgreSQL", "JWT", "Railway"],
     live: "https://dife-saas-api-production.up.railway.app",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-saas-api"
   },
   {
     title: "DIFE React Dashboard",
-    problem: "Operations teams required a visual interface to manage logistics data, monitor routes, and quickly identify high-risk activities.",
-    solution: "Built a responsive admin dashboard connected to the live API with real-time data, risk visualization, and intuitive management tools.",
-    tech: ["React", "Vite", "Axios", "React Router", "Cloudflare Pages"],
-    features: [
-      "Secure JWT authentication with protected routes",
-      "Dashboard with 4 key metric cards (drivers, routes, high risk, average risk)",
-      "Driver and route management with add/edit functionality",
-      "Risk monitoring with color-coded levels (Green/Yellow/Red)",
-      "Responsive design for desktop and tablet devices"
-    ],
+    problem: "Operations teams needed a visual interface to manage logistics data and monitor route risk in real-time.",
+    solution: "Built a responsive admin dashboard with secure authentication, real-time API integration, and risk visualization.",
+    systemArchitecture: "React + Vite frontend → Axios API client → DIFE SaaS API → Cloudflare Pages deployment",
     engineeringDecisions: [
-      "Designed modular API structure for scalability",
-      "Separated business logic from controllers for maintainability",
-      "Used stateless authentication (JWT) for distributed systems",
-      "Optimized data flow between frontend and backend systems"
+      "Implemented protected routes with JWT token validation",
+      "Created reusable components for tables, forms, and cards",
+      "Built color-coded risk levels (Green/Yellow/Red)",
+      "Optimized API calls with axios interceptors"
     ],
+    tech: ["React", "Vite", "Axios", "React Router", "Cloudflare Pages"],
     live: "https://dife-dashboard.pages.dev",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-dashboard"
   },
   {
     title: "DIFE Automation System",
-    problem: "Manual monitoring of routes for high-risk conditions was inefficient. Companies needed automated billing and alert systems.",
+    problem: "Manual monitoring of routes for high-risk conditions was inefficient. Companies needed automated alerting and billing.",
     solution: "Built a Cloudflare Worker with cron triggers that automatically checks routes every 2 minutes and calculates billing every 5 minutes.",
-    tech: ["Cloudflare Workers", "Cron Jobs", "Fetch API", "GitHub Actions"],
-    features: [
-      "Automatic risk detection (alerts when risk_score > 70)",
-      "Billing simulation ($5 per route per company)",
-      "Debug endpoint (/run-jobs) returning complete JSON results",
-      "Runs 24/7 with zero manual intervention",
-      "Company-level billing breakdown and logging"
-    ],
+    systemArchitecture: "Cloudflare Workers → cron triggers → API integration → JSON logging",
     engineeringDecisions: [
-      "Designed modular API structure for scalability",
-      "Separated business logic from controllers for maintainability",
-      "Used stateless authentication (JWT) for distributed systems",
-      "Optimized data flow between frontend and backend systems"
+      "Designed stateless job execution for reliability",
+      "Implemented automatic retry logic for API failures",
+      "Built debug endpoint (/run-jobs) for manual testing",
+      "Added structured logging for observability"
     ],
+    tech: ["Cloudflare Workers", "Cron Jobs", "Fetch API", "GitHub Actions"],
     live: "https://dife-automation.dikeojo-ifeanyi001.workers.dev/run-jobs",
     github: "https://github.com/dikeojoifeanyi001-hub/dife-automation"
   }
@@ -73,6 +55,7 @@ export default function Projects() {
 
   const titleStyle = {
     fontSize: "36px",
+    fontWeight: "700",
     marginBottom: "40px",
     color: "#1a1a2e",
     letterSpacing: "-0.5px"
@@ -82,13 +65,14 @@ export default function Projects() {
     backgroundColor: "white",
     borderRadius: "12px",
     padding: "32px",
-    marginBottom: "40px",
+    marginBottom: "70px",
     boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
     border: "1px solid #eee"
   };
 
   const projectTitleStyle = {
     fontSize: "28px",
+    fontWeight: "700",
     marginBottom: "20px",
     color: "#1a1a2e",
     letterSpacing: "-0.5px"
@@ -107,13 +91,14 @@ export default function Projects() {
     fontSize: "16px",
     lineHeight: "1.6",
     color: "#444",
-    marginBottom: "20px"
+    marginBottom: "16px"
   };
 
   const techStyle = {
     display: "flex",
     flexWrap: "wrap",
     gap: "8px",
+    marginTop: "16px",
     marginBottom: "24px"
   };
 
@@ -126,17 +111,12 @@ export default function Projects() {
     fontWeight: "500"
   };
 
-  const featureStyle = {
-    marginBottom: "24px",
-    paddingLeft: "20px"
-  };
-
-  const engineeringStyle = {
-    marginBottom: "24px",
-    paddingLeft: "20px",
+  const decisionsStyle = {
     backgroundColor: "#f8f9fa",
     padding: "20px",
-    borderRadius: "8px"
+    borderRadius: "8px",
+    marginTop: "16px",
+    marginBottom: "24px"
   };
 
   const linkStyle = {
@@ -161,28 +141,23 @@ export default function Projects() {
           <div style={sectionLabelStyle}>Solution</div>
           <p style={textStyle}>{project.solution}</p>
           
-          <div style={sectionLabelStyle}>Tech Stack</div>
-          <div style={techStyle}>
-            {project.tech.map((tech, i) => (
-              <span key={i} style={techBadgeStyle}>{tech}</span>
-            ))}
-          </div>
+          <div style={sectionLabelStyle}>System Architecture</div>
+          <p style={textStyle}>{project.systemArchitecture}</p>
           
-          <div style={sectionLabelStyle}>Key Features</div>
-          <ul style={featureStyle}>
-            {project.features.map((feature, i) => (
-              <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{feature}</li>
-            ))}
-          </ul>
-          
-          {/* ENGINEERING DECISIONS BLOCK - ADDED */}
           <div style={sectionLabelStyle}>Engineering Decisions</div>
-          <div style={engineeringStyle}>
+          <div style={decisionsStyle}>
             <ul style={{ margin: 0, paddingLeft: "20px" }}>
               {project.engineeringDecisions.map((decision, i) => (
                 <li key={i} style={{ marginBottom: "8px", color: "#555", lineHeight: "1.5" }}>{decision}</li>
               ))}
             </ul>
+          </div>
+          
+          <div style={sectionLabelStyle}>Tech Stack</div>
+          <div style={techStyle}>
+            {project.tech.map((tech, i) => (
+              <span key={i} style={techBadgeStyle}>{tech}</span>
+            ))}
           </div>
           
           <div>
