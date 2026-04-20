@@ -205,70 +205,9 @@ body {
   }
 }
 
-/* ========== CONTACT PAGE - FORCE FIX OVERFLOW ========== */
+/* ========== CONTACT PAGE - MOBILE WIDE BLOCKS ========== */
 
-/* Force all contact containers to contain their content */
-.contact-info-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  max-width: 100%;
-}
-
-.contact-info-block {
-  flex: 1;
-  min-width: 150px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  max-width: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-/* FORCE email and GitHub links to stay inside container */
-.contact-info-block a {
-  display: inline-block;
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-all;
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* FORCE any text inside blocks to wrap */
-.contact-info-block div,
-.contact-info-block p,
-.contact-info-block span {
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  white-space: normal;
-}
-
-/* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .contact-info-container {
-    gap: 16px;
-  }
-  
-  .contact-info-block {
-    min-width: 140px;
-    padding: 16px;
-  }
-  
-  .contact-info-block a {
-    font-size: 14px;
-  }
-}
-
-/* MOBILE - FORCE STACK AND CONTAINMENT */
+/* MOBILE - Wide vertical blocks */
 @media (max-width: 768px) {
   .contact-info-container {
     flex-direction: column;
@@ -279,74 +218,37 @@ body {
     width: 100%;
     min-width: 100%;
     max-width: 100%;
-    padding: 16px;
+    padding: 20px;
     text-align: center;
-    overflow: hidden;
+    /* Make blocks wide enough for text */
+    display: block;
     box-sizing: border-box;
   }
   
   .contact-info-block a {
-    font-size: 14px;
-    word-break: break-all;
+    font-size: 16px;
+    word-break: break-word;
     overflow-wrap: break-word;
     white-space: normal;
     display: inline-block;
     max-width: 100%;
   }
   
+  /* Make the value text readable */
   .contact-info-block div:last-child {
-    word-break: break-all;
+    font-size: 16px;
+    word-break: break-word;
     overflow-wrap: break-word;
-    white-space: normal;
   }
 }
 
 /* Small mobile */
 @media (max-width: 480px) {
   .contact-info-block {
-    padding: 14px;
+    padding: 16px;
   }
   
   .contact-info-block a {
-    font-size: 12px;
+    font-size: 14px;
   }
-}
-
-/* ========== GLOBAL STYLES ========== */
-a {
-  transition: opacity 0.2s ease;
-}
-
-a:hover {
-  opacity: 0.7;
-}
-
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    padding: 0 16px;
-  }
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
 }
