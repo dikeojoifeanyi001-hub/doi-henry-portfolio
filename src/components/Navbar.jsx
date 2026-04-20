@@ -18,13 +18,13 @@ export default function Navbar() {
           <Link to="/contact" className="nav-link">Contact</Link>
         </nav>
 
-        {/* Hamburger Button */}
+        {/* Hamburger Button - mobile only */}
         <div className="hamburger" onClick={() => setMenuOpen(true)}>
           ☰
         </div>
       </div>
 
-      {/* Mobile/Tablet Menu */}
+      {/* Mobile Menu - slide in panel */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="menu-header">
           <span className="close-btn" onClick={closeMenu}>✕</span>
