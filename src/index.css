@@ -260,3 +260,36 @@ body {
     border: none !important;
   }
 }
+
+/* ========== RESPONSIVE HEADING - STACK ON MOBILE ========== */
+.mobile-heading {
+  display: none;
+}
+
+.desktop-heading {
+  display: inline;
+}
+
+/* On mobile, show stacked version and hide horizontal version */
+@media (max-width: 768px) {
+  .desktop-heading {
+    display: none;
+  }
+  
+  .mobile-heading {
+    display: inline;
+    line-height: 1.4;
+  }
+  
+  /* Adjust heading size on mobile */
+  .mobile-stacked-heading {
+    font-size: 28px !important;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .mobile-stacked-heading {
+    font-size: 24px !important;
+  }
+}
