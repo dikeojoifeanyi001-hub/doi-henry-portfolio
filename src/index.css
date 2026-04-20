@@ -205,50 +205,24 @@ body {
   }
 }
 
-/* ========== CONTACT PAGE - MOBILE WIDE BLOCKS ========== */
-
-/* MOBILE - Wide vertical blocks */
+/* EMERGENCY OVERRIDE - Force contact blocks to be wide enough */
 @media (max-width: 768px) {
   .contact-info-container {
-    flex-direction: column;
-    gap: 16px;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   
   .contact-info-block {
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    padding: 20px;
-    text-align: center;
-    /* Make blocks wide enough for text */
-    display: block;
-    box-sizing: border-box;
+    width: 95% !important;
+    min-width: 95% !important;
+    max-width: 95% !important;
+    margin: 0 auto !important;
+    padding: 20px 15px !important;
   }
   
   .contact-info-block a {
-    font-size: 16px;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    display: inline-block;
-    max-width: 100%;
-  }
-  
-  /* Make the value text readable */
-  .contact-info-block div:last-child {
-    font-size: 16px;
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-}
-
-/* Small mobile */
-@media (max-width: 480px) {
-  .contact-info-block {
-    padding: 16px;
-  }
-  
-  .contact-info-block a {
-    font-size: 14px;
+    font-size: 14px !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
   }
 }
