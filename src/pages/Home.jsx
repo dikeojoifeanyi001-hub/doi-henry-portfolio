@@ -13,7 +13,8 @@ export default function Home() {
     fontSize: "32px",
     fontWeight: "700",
     marginBottom: "20px",
-    color: "#1a1a2e"
+    color: "#1a1a2e",
+    lineHeight: "1.3"
   };
 
   const descriptionStyle = {
@@ -96,7 +97,11 @@ export default function Home() {
     <div style={containerStyle}>
       {/* HERO SECTION */}
       <div style={heroStyle}>
-        <h1 style={titleStyle}>Software Engineer — Backend Systems • SaaS Architecture • Automation Engineering</h1>
+        <h1 style={titleStyle}>
+          Software Engineer<br />
+          Specializing in Backend Systems,<br />
+          SaaS Architecture & Automation
+        </h1>
         <p style={descriptionStyle}>
           I build production-grade backend systems that power real workflows —
           including multi-tenant SaaS APIs, automation engines, and analytics dashboards.
