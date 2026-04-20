@@ -205,32 +205,58 @@ body {
   }
 }
 
-/* ========== CONTACT PAGE - REMOVE EMAIL & GITHUB CONTAINERS ON MOBILE ========== */
-
+/* ========== CONTACT PAGE - REMOVE ALL CONTAINERS ON MOBILE ========== */
 @media (max-width: 768px) {
-  /* Target only the Email and GitHub blocks */
-  .contact-info-block:first-child,
-  .contact-info-block:nth-child(2) {
-    background: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+  /* Remove the main card container */
+  .contact-page-card,
+  .contact-card,
+  [class*="contact"] .card,
+  div[style*="backgroundColor: white"],
+  div[style*="background-color: white"] {
+    background: transparent !important;
     box-shadow: none !important;
     border: none !important;
+    padding: 0 !important;
+  }
+  
+  /* Target the contact info container */
+  .contact-info-container {
+    display: block !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  
+  /* Remove all block styling from email, github, open to sections */
+  .contact-info-block {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 8px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
     text-align: left !important;
   }
   
-  /* Style the email and GitHub links as plain text */
-  .contact-info-block:first-child a,
-  .contact-info-block:nth-child(2) a {
-    font-size: 14px !important;
+  /* Remove labels or keep them simple */
+  .contact-info-block div:first-child {
+    font-size: 12px !important;
+    color: #666 !important;
+    letter-spacing: normal !important;
+  }
+  
+  /* Make links plain text style */
+  .contact-info-block a {
     color: #0d6efd !important;
     text-decoration: underline !important;
+    font-size: 14px !important;
     word-break: break-all !important;
   }
   
-  /* Remove labels for Email and GitHub on mobile (optional) */
-  .contact-info-block:first-child div:first-child,
-  .contact-info-block:nth-child(2) div:first-child {
-    display: none !important;
+  /* Remove any remaining card styling */
+  .contact-info-block,
+  .contact-info-block * {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
   }
 }
