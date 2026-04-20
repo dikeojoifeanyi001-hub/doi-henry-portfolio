@@ -294,3 +294,92 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #a1a1a1;
 }
+
+/* ========== CONTACT PAGE - FIXED FOR MOBILE ========== */
+
+/* Base styles for contact info blocks */
+.contact-info-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.contact-info-block {
+  flex: 1;
+  min-width: 150px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Email and GitHub text styling */
+.contact-info-block a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Tablet styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-info-container {
+    gap: 16px;
+  }
+  
+  .contact-info-block {
+    min-width: 140px;
+    padding: 16px;
+  }
+  
+  .contact-info-block a {
+    font-size: 14px;
+  }
+}
+
+/* Mobile styles - FIXED for text wrapping */
+@media (max-width: 768px) {
+  .contact-info-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .contact-info-block {
+    width: 100%;
+    min-width: 100%;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .contact-info-block a {
+    font-size: 14px;
+    word-break: break-all;
+    display: inline-block;
+    max-width: 100%;
+  }
+  
+  .value-style {
+    font-size: 14px;
+  }
+  
+  .label-style {
+    font-size: 12px;
+  }
+}
+
+/* Small mobile devices (under 480px) */
+@media (max-width: 480px) {
+  .contact-info-block {
+    padding: 14px;
+  }
+  
+  .contact-info-block a {
+    font-size: 12px;
+  }
+}
