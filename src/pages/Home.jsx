@@ -1,6 +1,6 @@
 export default function Home() {
   const containerStyle = {
-    maxWidth: "1200px",
+    maxWidth: "1000px",
     margin: "0 auto",
     padding: "60px 40px"
   };
@@ -53,49 +53,35 @@ export default function Home() {
     color: "#1a1a2e"
   };
 
-  const cardsContainerStyle = {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "24px",
-    marginBottom: "40px",
-    justifyContent: "center"
-  };
-
-  const cardStyle = {
-    flex: "1",
-    minWidth: "280px",
+  const boxStyle = {
     backgroundColor: "#f8f9fa",
-    padding: "24px",
+    padding: "32px",
     borderRadius: "12px",
-    borderLeft: "4px solid #0d6efd",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
+    marginBottom: "40px",
+    borderLeft: "4px solid #0d6efd"
   };
 
-  const reliabilityCardStyle = {
-    flex: "1",
-    minWidth: "280px",
+  const reliabilityBoxStyle = {
     backgroundColor: "#fff8e7",
-    padding: "24px",
+    padding: "32px",
     borderRadius: "12px",
-    borderLeft: "4px solid #ffc107",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
+    marginBottom: "40px",
+    borderLeft: "4px solid #ffc107"
   };
 
-  const scaleCardStyle = {
-    flex: "1",
-    minWidth: "280px",
+  const scaleBoxStyle = {
     backgroundColor: "#e7f3ff",
-    padding: "24px",
+    padding: "32px",
     borderRadius: "12px",
-    borderLeft: "4px solid #0d6efd",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.05)"
+    marginBottom: "40px",
+    borderLeft: "4px solid #0d6efd"
   };
 
   const listStyle = {
     paddingLeft: "20px",
     lineHeight: "1.8",
-    marginTop: "12px",
-    marginBottom: 0
+    marginTop: "16px",
+    marginBottom: "16px"
   };
 
   const footerStyle = {
@@ -128,82 +114,55 @@ export default function Home() {
 
       {/* SYSTEM ARCHITECTURE THINKING */}
       <h2 style={sectionTitleStyle}>System Architecture Thinking</h2>
-      <div style={cardsContainerStyle}>
-        <div style={cardStyle}>
-          <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px", fontWeight: "bold" }}>
-            API Layer
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", color: "#555", marginBottom: 0 }}>
-            Handles authentication, business logic, and data integrity
-          </p>
-        </div>
-        <div style={cardStyle}>
-          <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px", fontWeight: "bold" }}>
-            Frontend Layer
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", color: "#555", marginBottom: 0 }}>
-            Provides operational dashboards and control systems
-          </p>
-        </div>
-        <div style={cardStyle}>
-          <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px", fontWeight: "bold" }}>
-            Automation Layer
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", color: "#555", marginBottom: 0 }}>
-            Executes background jobs, monitoring, and billing logic
-          </p>
-        </div>
+      <div style={boxStyle}>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px" }}>
+          I design systems as connected layers, not isolated applications:
+        </p>
+        <ul style={listStyle}>
+          <li><strong>API Layer:</strong> Handles authentication, business logic, and data integrity</li>
+          <li><strong>Frontend Layer:</strong> Provides operational dashboards and control systems</li>
+          <li><strong>Automation Layer:</strong> Executes background jobs, monitoring, and billing logic</li>
+        </ul>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginTop: "16px", marginBottom: 0 }}>
+          This creates a complete SaaS ecosystem that mirrors real production architecture.
+        </p>
       </div>
 
       {/* SYSTEM RELIABILITY THINKING */}
       <h2 style={sectionTitleStyle}>System Reliability Thinking</h2>
-      <div style={cardsContainerStyle}>
-        <div style={reliabilityCardStyle}>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: "12px" }}>
-            API endpoints validate all incoming data before processing
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: "12px" }}>
-            System prevents unauthorized access using middleware-based authentication
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: 0 }}>
-            External API failures do not crash the application
-          </p>
-        </div>
-        <div style={reliabilityCardStyle}>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: "12px" }}>
-            Database operations are structured to avoid inconsistent states
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: "12px" }}>
-            Frontend handles loading, error, and empty states gracefully
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: 0 }}>
-            The system is designed to remain stable under real-world failure conditions
-          </p>
-        </div>
+      <div style={reliabilityBoxStyle}>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px" }}>
+          I design systems with failure in mind, not just success cases.
+        </p>
+        <ul style={listStyle}>
+          <li>API endpoints validate all incoming data before processing</li>
+          <li>System prevents unauthorized access using middleware-based authentication</li>
+          <li>External API failures do not crash the application</li>
+          <li>Database operations are structured to avoid inconsistent states</li>
+          <li>Frontend handles loading, error, and empty states gracefully</li>
+        </ul>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: 0 }}>
+          The system is designed to remain stable under real-world failure conditions.
+        </p>
       </div>
 
       {/* SCALE & SYSTEM LIMITS */}
       <h2 style={sectionTitleStyle}>System Scale & Architecture Limits</h2>
-      <div style={cardsContainerStyle}>
-        <div style={scaleCardStyle}>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: "12px" }}>
-            Current architecture can handle ~1,000–5,000 requests/day
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: "12px" }}>
-            Database can scale horizontally with indexing + replication
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: 0 }}>
-            API design is stateless, enabling horizontal scaling via load balancers
-          </p>
-        </div>
-        <div style={scaleCardStyle}>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: "12px" }}>
-            Risk scoring logic runs in O(1) time per request
-          </p>
-          <p style={{ fontSize: "14px", lineHeight: "1.5", marginBottom: 0 }}>
-            If scaled to production level: caching (Redis), queue workers, and read replicas
-          </p>
-        </div>
+      <div style={scaleBoxStyle}>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "16px" }}>
+          These systems are designed as production-grade prototypes that can scale
+          with additional infrastructure improvements.
+        </p>
+        <ul style={listStyle}>
+          <li>Current architecture can handle ~1,000–5,000 requests/day in a single instance deployment</li>
+          <li>Database is optimized for small-to-medium SaaS workloads (can scale horizontally with indexing + replication)</li>
+          <li>API design is stateless, enabling horizontal scaling via load balancers</li>
+          <li>Risk scoring logic runs in O(1) time per request (constant-time computation)</li>
+        </ul>
+        <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: 0 }}>
+          If scaled to production level, I would introduce caching (Redis), queue workers,
+          and read replicas for database scaling.
+        </p>
       </div>
 
       {/* FOOTER */}
