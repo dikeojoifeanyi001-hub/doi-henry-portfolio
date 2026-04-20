@@ -205,24 +205,64 @@ body {
   }
 }
 
-/* EMERGENCY OVERRIDE - Force contact blocks to be wide enough */
+/* ========== CONTACT PAGE - MOBILE WIDE BLOCKS (STRONGER) ========== */
+
+/* MOBILE - Wide vertical blocks with stronger containment */
 @media (max-width: 768px) {
   .contact-info-container {
-    width: 100% !important;
-    max-width: 100% !important;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
   }
   
   .contact-info-block {
-    width: 95% !important;
-    min-width: 95% !important;
-    max-width: 95% !important;
-    margin: 0 auto !important;
-    padding: 20px 15px !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px !important;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  
+  /* Force email and GitHub links to stay inside */
+  .contact-info-block a {
+    font-size: 15px !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    display: inline-block;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  /* Force all text inside blocks to wrap */
+  .contact-info-block div,
+  .contact-info-block p,
+  .contact-info-block span {
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Small mobile - even larger padding and smaller text */
+@media (max-width: 480px) {
+  .contact-info-block {
+    padding: 20px 16px !important;
   }
   
   .contact-info-block a {
     font-size: 14px !important;
-    word-break: break-all !important;
-    overflow-wrap: break-word !important;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+  .contact-info-block a {
+    font-size: 12px !important;
   }
 }
