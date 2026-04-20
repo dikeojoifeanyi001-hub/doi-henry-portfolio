@@ -205,96 +205,6 @@ body {
   }
 }
 
-/* ========== CONTACT PAGE - HORIZONTAL INFO BLOCKS ========== */
-.contact-info-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.contact-info-block {
-  flex: 1;
-  min-width: 150px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-}
-
-/* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .contact-info-container {
-    gap: 16px;
-  }
-  
-  .contact-info-block {
-    min-width: 140px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .contact-info-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  .contact-info-block {
-    min-width: calc(33.33% - 12px);
-    flex: 1;
-    padding: 16px;
-  }
-}
-
-/* Small mobile */
-@media (max-width: 480px) {
-  .contact-info-block {
-    min-width: 100%;
-  }
-}
-
-/* ========== GLOBAL STYLES ========== */
-a {
-  transition: opacity 0.2s ease;
-}
-
-a:hover {
-  opacity: 0.7;
-}
-
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    padding: 0 16px;
-  }
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
-}
-
 /* ========== CONTACT PAGE - FORCE FIX OVERFLOW ========== */
 
 /* Force all contact containers to contain their content */
@@ -314,7 +224,6 @@ a:hover {
   padding: 20px;
   background-color: #f8f9fa;
   border-radius: 8px;
-  /* FORCE TEXT CONTAINMENT */
   max-width: 100%;
   overflow: hidden;
   box-sizing: border-box;
@@ -324,12 +233,10 @@ a:hover {
 .contact-info-block a {
   display: inline-block;
   max-width: 100%;
-  /* FORCE text wrapping */
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-all;
   white-space: normal;
-  /* Prevent overflow */
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -374,14 +281,12 @@ a:hover {
     max-width: 100%;
     padding: 16px;
     text-align: center;
-    /* FORCE containment */
     overflow: hidden;
     box-sizing: border-box;
   }
   
   .contact-info-block a {
     font-size: 14px;
-    /* FORCE breaking for long URLs */
     word-break: break-all;
     overflow-wrap: break-word;
     white-space: normal;
@@ -389,7 +294,6 @@ a:hover {
     max-width: 100%;
   }
   
-  /* Force the value text to wrap */
   .contact-info-block div:last-child {
     word-break: break-all;
     overflow-wrap: break-word;
@@ -406,4 +310,43 @@ a:hover {
   .contact-info-block a {
     font-size: 12px;
   }
+}
+
+/* ========== GLOBAL STYLES ========== */
+a {
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 16px;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }
