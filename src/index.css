@@ -1,24 +1,262 @@
-/* ========== MOBILE MENU LOGO STYLES ========== */
-.mobile-logo {
-  text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.mobile-logo-link {
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #ffffff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* ========== NAVBAR STYLES ========== */
+.navbar {
+  background: #1a1a2e;
+  color: white;
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: white;
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
-  color: #1a1a2e;
 }
 
-.mobile-logo-link:hover {
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+.mobile-link {
+  margin: 16px 0;
+  font-size: 20px;
+  text-decoration: none;
+  color: #1a1a2e;
+  font-weight: 500;
+}
+
+.mobile-link:hover {
   color: #0d6efd;
 }
 
-.mobile-links {
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+/* Tablet */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .mobile-menu {
+    width: 70%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  .mobile-menu {
+    width: 100%;
+  }
+  
+  .mobile-link {
+    font-size: 18px;
+    padding: 12px 0;
+  }
+  
+  .hamburger,
+  .close-btn {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .hamburger {
+    display: none;
+  }
+  
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* ========== HOME PAGE - HORIZONTAL CARDS ON MOBILE/TABLET ========== */
+.home-cards-container {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.home-card-item {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-cards-container {
+    gap: 20px;
+  }
+  
+  .home-card-item {
+    min-width: 220px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .home-cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .home-card-item {
+    min-width: calc(50% - 10px);
+    flex: 1;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .home-card-item {
+    min-width: 100%;
+  }
+}
+
+/* ========== CONTACT PAGE - REMOVE ALL CONTAINERS ON MOBILE ========== */
+@media (max-width: 768px) {
+  /* Remove the main card container */
+  .contact-page-card,
+  .contact-card,
+  [class*="contact"] .card,
+  div[style*="backgroundColor: white"],
+  div[style*="background-color: white"] {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  
+  /* Target the contact info container */
+  .contact-info-container {
+    display: block !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  
+  /* Remove all block styling from email, github, open to sections */
+  .contact-info-block {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 8px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+  
+  /* Remove labels or keep them simple */
+  .contact-info-block div:first-child {
+    font-size: 12px !important;
+    color: #666 !important;
+    letter-spacing: normal !important;
+  }
+  
+  /* Make links plain text style */
+  .contact-info-block a {
+    color: #0d6efd !important;
+    text-decoration: underline !important;
+    font-size: 14px !important;
+    word-break: break-all !important;
+  }
+  
+  /* Remove any remaining card styling */
+  .contact-info-block,
+  .contact-info-block * {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
 }

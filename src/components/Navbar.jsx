@@ -24,22 +24,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu - slide in panel with logo */}
+      {/* Mobile Menu - slide in panel */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="menu-header">
           <span className="close-btn" onClick={closeMenu}>✕</span>
         </div>
-        
-        {/* Logo added to mobile menu */}
-        <div className="mobile-logo">
-          <Link to="/" className="mobile-logo-link" onClick={closeMenu}>D.O.I Henry</Link>
-        </div>
-        
-        <div className="mobile-links">
-          <Link to="/" className="mobile-link" onClick={closeMenu}>Home</Link>
-          <Link to="/projects" className="mobile-link" onClick={closeMenu}>Projects</Link>
-          <Link to="/contact" className="mobile-link" onClick={closeMenu}>Contact</Link>
-        </div>
+        <Link to="/" className="mobile-link" onClick={closeMenu}>Home</Link>
+        <Link to="/projects" className="mobile-link" onClick={closeMenu}>Projects</Link>
+        <Link to="/contact" className="mobile-link" onClick={closeMenu}>Contact</Link>
       </div>
     </header>
   );
